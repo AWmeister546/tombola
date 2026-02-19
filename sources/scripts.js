@@ -79,8 +79,83 @@ function showall() {
 	popup.alert( { content : s } );
 }
 
-function downl() {
-		popup.alert({
-				content: 'Wydrukuj tylko tylke stron, ile potrzebujesz.<br><br><a href="pdf/kupony_duze.pdf">Duże (6 na stronie)</a><br><a href="pdf/kupony_male.pdf">Małe (12 na stronie)</a>'
-		});
+function losuj() {
+  var dostepne = [];
+  for (var i = 1; i <= 100; i++) {
+    var e = document.getElementById("num_" + i);
+    if (!e.classList.contains("chosen") && !e.classList.contains("last_cl")) {
+      dostepne.push(i);
+    }
+  }
+
+  if (dostepne.length === 0) {
+    popup.alert({ content: "Wszystkie liczby zostały już wylosowane!" });
+    return;
+  }
+
+  var wylosowana = dostepne[Math.floor(Math.random() * dostepne.length)];
+
+  var overlay = document.createElement("div");
+  overlay.id = "losowanie-overlay";
+  overlay.innerHTML =
+    "<div id='losowanie-box'>" +
+      "<span id='losowanie-label'>Wylosowana liczba</span>" +
+      "<span id='losowanie-liczba'>" + wylosowana + "</span>" +
+    "</div>";
+  document.body.appendChild(overlay);
+
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      overlay.classList.add("widoczny");
+    });
+  });
+
+  setTimeout(function() {
+    overlay.classList.remove("widoczny");
+    setTimeout(function() {
+      document.body.removeChild(overlay);
+      cl(wylosowana);
+    }, 600);
+  }, 5000);
 }
+
+(function injectStyles() {
+  var css = [
+    "#losowanie-overlay {",
+    "  position: fixed; inset: 0;",
+    "  background: rgba(0,0,0,0);",
+    "  display: flex; align-items: center; justify-content: center;",
+    "  z-index: 9999;",
+    "  transition: background 0.6s ease;",
+    "  pointer-events: none;",
+    "}",
+    "#losowanie-overlay.widoczny {",
+    "  background: rgba(0,0,0,0.82);",
+    "  pointer-events: all;",
+    "}",
+    "#losowanie-box {",
+    "  display: flex; flex-direction: column; align-items: center;",
+    "  opacity: 0; transform: scale(0.7);",
+    "  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(.34,1.56,.64,1);",
+    "}",
+    "#losowanie-overlay.widoczny #losowanie-box {",
+    "  opacity: 1; transform: scale(1);",
+    "}",
+    "#losowanie-label {",
+    "  color: #fff; font-size: clamp(1.4rem, 4vw, 2.2rem);",
+    "  letter-spacing: 0.08em; text-transform: uppercase;",
+    "  margin-bottom: 0.4em; font-family: inherit;",
+    "}",
+    "#losowanie-liczba {",
+    "  color: #f5c518;",
+    "  font-size: clamp(6rem, 22vw, 14rem);",
+    "  font-weight: 900; line-height: 1;",
+    "  text-shadow: 0 0 60px rgba(245,197,24,0.55);",
+    "  font-family: inherit;",
+    "}",
+  ].join("\n");
+
+  var style = document.createElement("style");
+  style.textContent = css;
+  document.head.appendChild(style);
+})();
