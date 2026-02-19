@@ -11,7 +11,7 @@ Projekt bazuje na oryginalnym rozwiązaniu autorstwa **x. Michała Cebulskiego S
 Oryginalna wersja aplikacji była dostępna pod adresem:  
 http://tombola.sdb.org.pl/  
 
-Obecnie strona nie jest już dostępna - projekt jest dalej hostowany tutaj, zmodyfikowany o obsługę liczb do 100 włącznie.
+Obecnie strona nie jest już dostępna - projekt jest dalej hostowany tutaj, zmodyfikowany o obsługę liczb do 100 włącznie i losowania kolejnych liczb.
 
 ---
 
