@@ -81,6 +81,6 @@ function showall() {
 
 function downl() {
 		popup.alert({
-				content: '⛔ Funkcja niedostępna ze względu<br>na brak dostępu do plików źródłowych.<br>'
+				content: 'Wydrukuj tylko tylke stron, ile potrzebujesz.<br><br><a href="https://raw.githubusercontent.com/AWmeister546/tombola/76420499b36c04abb254f8bfcbce146ec9a28b3f/pdf/kupony_duze.pdf">Duże (6 na stronie)</a><br><a href="https://raw.githubusercontent.com/AWmeister546/tombola/76420499b36c04abb254f8bfcbce146ec9a28b3f/pdf/kupony_male.pdf">Małe (12 na stronie)</a>'
 		});
 }
