@@ -8,10 +8,21 @@ Projekt bazuje na oryginalnym rozwiązaniu autorstwa **x. Michała Cebulskiego S
 
 ## 📜 Informacje o projekcie
 
-Oryginalna wersja aplikacji była dostępna pod adresem:  
+Oryginalna wersja aplikacji jest dostępna pod adresem:  
 http://tombola.sdb.org.pl/  
 
-Obecnie strona nie jest już dostępna - projekt jest dalej hostowany tutaj, zmodyfikowany o obsługę liczb do 100 włącznie i losowania kolejnych liczb.
+Repozytorium zawiera jej dwie zmodyfikowane wersje:
+- [Aktualną](https://awmeister546.github.io/tombola/) - obsługującą liczby do 100 włącznie i losowania kolejnych liczb automatycznie,
+- [Legacy](https://awmeister546.github.io/tombola/legacy/) - dodającą wyłącznie obsługę liczb do 100 włącznie
+
+---
+
+## 📝 Kupony
+
+Kupony są dostępne w dwóch wersjach:
+
+- Dużej (6 na stronie) [Pobierz](https://raw.githubusercontent.com/AWmeister546/tombola/76420499b36c04abb254f8bfcbce146ec9a28b3f/pdf/kupony_duze.pdf)
+- Małej (12 na stronie) [Pobierz](https://raw.githubusercontent.com/AWmeister546/tombola/76420499b36c04abb254f8bfcbce146ec9a28b3f/pdf/kupony_male.pdf)
 
 ---
 
